@@ -61,6 +61,7 @@ next_lev --> start
 ### flowchart voor Mounted gun:
 ```mermaid
 graph TD
+
     A[Start] --> B[Initialize variables]
     B --> C{Loop while game is running}
     C --> D(Get input for horizontal and vertical rotation)
