@@ -56,31 +56,25 @@ more_lev -->|no more levels| end_d((end))
 next_lev --> start
 
 
+```
+### flowchart for gun
 
-
-### flowchart voor Mounted gun:
-```mermaid
+``` mermaid
 graph TD
-
-    A[Start] --> B[Initialize variables]
-    B --> C{Loop while game is running}
-    C --> D(Get input for horizontal and vertical rotation)
-    D --> E[Calculate target rotation]
-    E --> F[Lerp current rotation towards target rotation]
-    F --> G[Set current rotation to new rotation]
-    D --> H(Check if firing input is pressed)
-    H --> I[Spawn bullet object]
-    I --> J[Set bullet's initial position and rotation]
-    J --> K[Calculate bullet's initial velocity]
-    K --> L[Add force to bullet]
-    C --> M[Wait for next frame]
-    M --> C
-    A[Start] --> Z[End]
-
-
-
+A((Start)) --> B(Aim Input)
+B --> C{Is Input Received?}
+C -->|Yes| D(Aim Gun)
+D --> E(Find Target)
+E --> F(Calculate Trajectory)
+F --> G(Fire Bullet)
+G --> H{Are Bullets Remaining?}
+H -->|Yes| E
+H -->|No| I((End))
+C -->|No| J(Gun Aims Forward)
+J --> E
 
 ```
+
 ### class diagram voor game entities:
 
 ```mermaid
