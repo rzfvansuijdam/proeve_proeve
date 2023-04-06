@@ -57,6 +57,28 @@ next_lev --> start
 
 
 
+
+### flowchart voor Mounted gun:
+```mermaid
+graph TD
+    A[Start] --> B[Initialize variables]
+    B --> C{Loop while game is running}
+    C --> D(Get input for horizontal and vertical rotation)
+    D --> E[Calculate target rotation]
+    E --> F[Lerp current rotation towards target rotation]
+    F --> G[Set current rotation to new rotation]
+    D --> H(Check if firing input is pressed)
+    H --> I[Spawn bullet object]
+    I --> J[Set bullet's initial position and rotation]
+    J --> K[Calculate bullet's initial velocity]
+    K --> L[Add force to bullet]
+    C --> M[Wait for next frame]
+    M --> C
+    A[Start] --> Z[End]
+
+
+
+
 ```
 ### class diagram voor game entities:
 
