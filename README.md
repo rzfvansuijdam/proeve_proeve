@@ -55,12 +55,11 @@ more_lev -->|yes, there's more| next_lev(start next level)
 more_lev -->|no more levels| end_d((end))
 next_lev --> start
 
-
+```
 
 
 ### flowchart voor Mounted gun:
 ```mermaid
-graph TD
 graph TD
     A[Start] --> B[Initialize variables]
     B --> C{Loop while game is running}
@@ -76,7 +75,6 @@ graph TD
     C --> M[Wait for next frame]
     M --> C
     A[Start] --> Z[End]
-
 
 
 
