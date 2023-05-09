@@ -60,21 +60,21 @@ next_lev --> start
 
 ### flowchart voor Mounted gun:
 ```mermaid
-graph TD
-    A[Start] --> B[Initialize variables]
-    B --> C{Loop while game is running}
-    C --> D(Get input for horizontal and vertical rotation)
-    D --> E[Calculate target rotation]
-    E --> F[Lerp current rotation towards target rotation]
-    F --> G[Set current rotation to new rotation]
-    D --> H(Check if firing input is pressed)
-    H --> I[Spawn bullet object]
-    I --> J[Set bullet's initial position and rotation]
-    J --> K[Calculate bullet's initial velocity]
-    K --> L[Add force to bullet]
-    C --> M[Wait for next frame]
-    M --> C
-    A[Start] --> Z[End]
+graph LR
+    A[Start Execution] --> B(Declare sounds)
+    B --> C(Define Awake())
+    C --> D{Loop through<br/>sounds array}
+    D -- Yes --> E(Add AudioSource component)
+    E --> F(Set AudioClip<br/>for AudioSource)
+    F --> G(Set volume<br/>for AudioSource)
+    G --> H(Set pitch<br/>for AudioSource)
+    H --> I(Set loop<br/>for AudioSource)
+    C --> J(Define Play())
+    J --> K(Find sound by<br/>name in array)
+    K --> L{Check if sound<br/>exists}
+    L -- Yes --> M(Print warning<br/>if sound not found)
+    L -- No --> O(Play audio)
+    O --> P[End Execution]
 
 
 
