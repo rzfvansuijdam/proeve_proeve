@@ -60,21 +60,22 @@ next_lev --> start
 
 ### flowchart voor Mounted gun:
 ```mermaid
-flowchart TD
-    A[Start Execution] --> B(Declare sounds)
-    B --> C(Define Awake())
-    C --> D{Loop through<br/>sounds array}
-    D -- Yes --> E(Add AudioSource component)
-    E --> F(Set AudioClip<br/>for AudioSource)
-    F --> G(Set volume<br/>for AudioSource)
-    G --> H(Set pitch<br/>for AudioSource)
-    H --> I(Set loop<br/>for AudioSource)
-    C --> J(Define Play())
-    J --> K(Find sound by<br/>name in array)
-    K --> L{Check if sound<br/>exists}
-    L -- Yes --> M(Print warning<br/>if sound not found)
-    L -- No --> O(Play audio)
-    O --> P[End Execution]
+graph LR;
+  A[Start Execution] --> B(Declare sounds);
+  B --> C(Define Awake());
+  C --> D{Loop through sounds array};
+  D -- Yes --> E(Add AudioSource component);
+  E --> F(Set AudioClip for AudioSource);
+  F --> G(Set volume for AudioSource);
+  G --> H(Set pitch for AudioSource);
+  H --> I(Set loop for AudioSource);
+  C --> J(Define Play());
+  J --> K(Find sound by name in array);
+  K --> L{Check if sound exists};
+  L -- Yes --> M(Print warning if sound not found);
+  L -- No --> O(Play audio);
+  O --> P[End Execution];
+
 
 
 
