@@ -60,7 +60,7 @@ next_lev --> start
 
 ### flowchart voor Mounted gun:
 ```mermaid
-graph LR
+flowchart TD
     A[Start Execution] --> B(Declare sounds)
     B --> C(Define Awake())
     C --> D{Loop through<br/>sounds array}
